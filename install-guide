@@ -1,0 +1,36 @@
+Installation of CommonHRM
+Quick guide
+
+1. Install LAMP on the PC under LINUX * 
+2. Copy the directory /commonhrm/ from the CD with all its files to /var/www/ (producing a directory /var/www/)
+3. Give this directory read privileges: sudo chmod 777 /var/www/commonhrm -R
+4. Edit the following files
+
+*commonhrm/lib/confs/Conf.php
+		$this->dbhost	= 'x.x.x.x';
+		$this->dbport 	= '3306';
+		$this->dbname    = 'dbname';
+		$this->dbuser    = 'dbuser';
+		$this->dbpass	= 'dbpassword';
+
+
+*commonhrm/symfony/config/databases.yml
+		      dsn: 'mysql:host=x.x.x.x;dbname=dbname'
+		      username: dbname
+		      password: dbpassword
+		      port: 3306
+
+
+
+5. Open MySQL with the LINUX command: mysql -p
+6. Create a blank database Eg: commonhrm.
+7. Give the MySQL command: source /var/www/commonhrm/nodata.sql	
+8. go to command line type following command
+
+* cd /var/www/commonhrm/symfony/
+* mkdir cache/
+* chmod 777 -R .
+* php symfony cc
+
+
+For further information, Contact www.icta.lk
